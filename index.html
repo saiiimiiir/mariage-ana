@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bolys Wedding - Anaïs & Gilles-W.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base */
+        :root {
+            --primary-color: #111;
+            --accent-color: #59011e; /* Rouge bordeaux pour le bouton */
+            --bg-light: #fdfdfd;
+            --text-grey: #555;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+        }
+        @font-face {
+            font-family: 'The Youngest Script';
+            src: url('./public/the-youngest-script/the-youngest-script.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+        .script-font { font-family: 'The Youngest Script', cursive; font-size: 6rem; margin: 0; }
+        a { text-decoration: none; color: inherit; font-weight: bold; font-size: 1rem;}
+        
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(5px);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Bouton RSVP */
+        .btn-rsvp {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        .btn-rsvp:hover { background-color: #5a0915; }
+
+        /* Section Hero */
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./public/hero.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h2 { letter-spacing: 5px; font-size: 1.5rem; margin-top: 0; }
+        .hero .date { font-family: 'Montserrat', sans-serif; letter-spacing: 3px; margin: 20px 0 40px; }
+
+        /* Sections communes */
+        .section-hero { padding: 80px 20px; text-align: center; max-width: 100%; margin: 0 auto; }
+        section { padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
+        .section-title { font-size: 2rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px; }
+        
+        /* Bienvenue & Citation */
+        .quote { font-style: italic; font-size: 1.2rem; color: var(--text-grey); margin: 30px 0; line-height: 1.6; }
+        .reference { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Compte à rebours (Statique pour le design) */
+        .countdown { display: flex; justify-content: center; gap: 30px; margin-top: 40px; font-family: 'Playfair Display', serif; }
+        .cd-item { display: flex; flex-direction: column; }
+        .cd-number { font-size: 2.5rem; }
+        .cd-label { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* Notre Amour */
+        .story-content { text-align: left; line-height: 1.8; color: var(--text-grey); margin-bottom: 40px; }
+        .photo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 40px; }
+        .photo-grid img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(100%); }
+
+        /* Détails */
+        .details-box { background: #f4f4f4; padding: 40px; border-radius: 5px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#amour">NOTRE AMOUR</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#accueil">ACCUEIL</a>
+        <a href="#programme">PROGRAMME</a>
+        <a href="#details">DÉTAILS</a>
+    </header>
+
+    <section id="accueil" class="hero section-hero">
+        <h1 class="script-font">The Bolys</h1>
+        <h2>WEDDING</h2>
+        <div class="date">ANAIS & GILLES-W.<br>11.07.2026</div>
+        <a href="#rsvp" class="btn-rsvp">RSVP</a>
+    </section>
+
+    <section id="bienvenue">
+        <h2 class="section-title">BIENVENUE</h2>
+        <div class="quote">
+            "Celui qui trouve sa femme trouve le bonheur: C'est une grâce qu'il obtient de l'Eternel"
+        </div>
+        <div class="reference">Proverbes 18:22</div>
+        
+        <p style="margin-top: 40px; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">NOUS AVONS HÂTE DE VOUS RETROUVER</p>
+        <div class="countdown">
+            <div class="cd-item"><span class="cd-number">60</span><span class="cd-label">Jours</span></div>
+            <div class="cd-item"><span class="cd-number">15</span><span class="cd-label">Heures</span></div>
+            <div class="cd-item"><span class="cd-number">20</span><span class="cd-label">Minutes</span></div>
+            <div class="cd-item"><span class="cd-number">6</span><span class="cd-label">Secondes</span></div>
+        </div>
+    </section>
+
+    <hr style="width: 50px; border: 1px solid #ccc; margin: 40px auto;">
+
+    <section id="amour">
+        <h2 class="section-title">NOTRE AMOUR</h2>
+        <div class="story-content">
+            <p>Notre rencontre a été comme une évidence. Nous avons très vite réalisé que Dieu nous façonnait chacun de notre côté pour permettre cette union.</p>
+            <p>Nous nous sommes trouvés, puis choisis simplement, avec confiance. Aujourd'hui, nous souhaitons franchir ensemble cette nouvelle étape qu'est le mariage, avec Dieu au centre, et la vivre entourés de ceux qui nous sont chers.</p>
+            <p>C'est donc avec beaucoup de joie que nous vous invitons à venir la célébrer avec nous. Votre présence, vos prières et vos sourires feront pleinement partie de ce moment.</p>
+            <p>Et pour ceux qui en doutaient encore... Anais a toujours été ivoirienne au fond, cette fête en sera la preuve !</p>
+            <p style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--primary-color); text-align: right;">Anais et Gilles-Wilfried</p>
+        </div>
+        
+        <div class="photo-grid">
+            <img src="./public/unnamed.jpg" alt="Couple 1">
+            <img src="./public/unnamed (1).jpg" alt="Couple 2">
+            <img src="./public/unnamed (2).jpg" alt="Couple 3">
+        </div>
+    </section>
+
+    <section id="rsvp" style="background-color: #fdfdfd;">
+        <h2 class="section-title">SEREZ-VOUS PRÉSENTS ?</h2>
+        <p class="story-content" style="text-align: center;">Nous serions très heureux de partager ce moment si important de notre vie à vos côtés.<br><br>
+        Merci de confirmer votre présence en cliquant sur le bouton RSVP avant<br>
+        <strong>le XX/XX/XX</strong></p>
+        <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 30px;">Nous avons hâte de célébrer avec vous !</p>
+        <button class="btn-rsvp">RSVP</button>
+    </section>
+
+    <section id="details">
+        <h2 class="section-title">DÉTAILS</h2>
+        <div class="details-box">
+            <h3>LE DOMAINE DU CHÂTEAU DU BOIS DU ROCHER</h3>
+            <p class="story-content" style="text-align: center; margin-top: 20px;">
+                Situé au cœur de la Vallée de la Bièvre, à Jouy-en-Josas, seulement 15 km de Paris, ce lieu unique vous séduira par son calme, sa sérénité et son cadre exceptionnel.<br><br>
+                Son atmosphère champêtre chic, à la fois élégante et décontractée, en fait l'écrin idéal pour notre mariage : le parc et l'orangerie accueilleront la cérémonie, les moments conviviaux et les célébrations.
+            </p>
+            <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: 600;">
+                Route de Versailles 78350 Jouy-en-Josas
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>
