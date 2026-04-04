@@ -77,7 +77,7 @@ header a {
 
 /* Sections communes */
 .section-hero { padding: 80px 20px; text-align: center; max-width: 100%; margin: 0 auto; }
-.full-width { width: 100% !important}
+.full-width {max-width: 100%;}
 section { padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
 .section-title { font-size: 2rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px; }
 
@@ -91,13 +91,142 @@ section { padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 au
 .cd-number { font-size: 2.5rem; }
 .cd-label { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
 
+#compte-a-rebours {
+    background-color: var(--accent-color);
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+#compte-a-rebours p,#compte-a-rebours span{
+    color: white;
+}
 /* Notre Amour */
 .story-content { text-align: left; line-height: 1.8; color: var(--text-grey); margin-bottom: 40px; }
 .photo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0px; margin-top: 40px; }
 .photo-grid img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(100%); }
+#amour p{
+    text-align: center;
+}
 
 /* Détails */
 .details-box { background: #f4f4f4; padding: 40px; border-radius: 5px; margin-top: 30px; }
+
+/* Programme / Timeline */
+.programme-section {
+    background-color: var(--accent-color);
+    padding: 80px 20px;
+}
+.programme-title {
+    color: #fff;
+}
+
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.35);
+    transform: translateX(-50%);
+}
+
+.timeline-row {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.tl-side {
+    flex: 1;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+}
+
+.tl-left {
+    justify-content: flex-end;
+    padding-right: 25px;
+}
+
+.tl-right {
+    justify-content: flex-start;
+    padding-left: 25px;
+}
+
+/* Left column: text aligned to the right */
+.row-left .tl-card {
+    flex-direction: row;
+}
+.row-left .tl-text {
+    text-align: right;
+    align-items: flex-end;
+}
+
+/* Right column: text aligned to the left */
+.row-right .tl-card {
+    flex-direction: row;
+}
+.row-right .tl-text {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.tl-dot {
+    width: 4px;
+    height: 4px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.tl-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 180px;
+}
+
+.tl-icon {
+    width: 42px;
+    height: 42px;
+    color: rgba(255, 255, 255, 0.65);
+    flex-shrink: 0;
+}
+
+.tl-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.tl-time {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 1px;
+}
+
+.tl-label {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+
+
+
+
 
 /* ==========================================================
    Responsive Design & Ajustement des Textes 
@@ -144,6 +273,59 @@ section { padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 au
     .details-box {
         padding: 25px 20px;
     }
+
+    /* Programme / Timeline responsive */
+    .programme-section {
+        padding: 50px 15px;
+    }
+    .timeline {
+        max-width: 100%;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: static;
+    }
+    .timeline-line {
+        display: none;
+    }
+    .tl-dot {
+        display: none;
+    }
+    .timeline-row {
+        display: contents;
+    }
+    .tl-side:not(:has(.tl-card)) {
+        display: none;
+    }
+    .tl-side {
+        flex: none;
+        max-width: none;
+        min-height: auto;
+        padding: 0 !important;
+        margin-bottom: 6px;
+    }
+    .tl-card {
+        flex-direction: row !important;
+        width: 210px;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+    .row-left .tl-text,
+    .row-right .tl-text {
+        text-align: left;
+        align-items: flex-start;
+    }
+    .tl-icon {
+        width: 32px;
+        height: 32px;
+    }
+    .tl-label {
+        font-size: 0.85rem;
+    }
+    .tl-time {
+        font-size: 0.75rem;
+    }
 }
 
 /* Petits mobiles (max 480px) */
@@ -163,4 +345,21 @@ section { padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 au
     .countdown { gap: 10px; }
     .cd-number { font-size: 1.4rem; }
     .cd-label { font-size: 0.5rem; }
+
+    /* Programme mobile */
+    .tl-right .tl-card{
+        flex-direction: row-reverse !important;
+        margin-right: auto;
+        justify-content: flex-end;
+    }
+    .tl-side{
+        margin-bottom: 15px;
+    }
+    .tl-label {
+        font-size: 0.85rem;
+    }
+    .tl-icon {
+        width: 30px;
+        height: 30px;
+    }
 }
