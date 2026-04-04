@@ -3,6 +3,7 @@
     --primary-color: #111;
     --accent-color: #59011e; /* Rouge bordeaux pour le bouton */
     --bg-light: #fdfdfd;
+    --bg-light-accent : #DDCCD2;;
     --text-grey: #555;
 }
 body, html {
@@ -80,6 +81,9 @@ header a {
 .full-width {max-width: 100%;}
 section { padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
 .section-title { font-size: 2rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px; }
+#rsvp{
+    background-color: var(--bg-light-accent);
+}
 
 /* Bienvenue & Citation */
 .quote { font-style: italic; font-size: 1.2rem; color: var(--text-grey); margin: 30px 0; line-height: 1.6; }
