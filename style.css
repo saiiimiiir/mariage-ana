@@ -114,6 +114,156 @@ section { padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 au
 /* Détails */
 .details-box { background: #f4f4f4; padding: 40px; border-radius: 5px; margin-top: 30px; }
 
+/* Bouton Google Maps */
+.btn-maps {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background-color: var(--accent-color);
+    color: #fff !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 15px rgba(89, 1, 30, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+.btn-maps::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.6s ease;
+}
+.btn-maps:hover::before {
+    left: 100%;
+}
+.btn-maps:hover {
+    background-color: #7a0228;
+    box-shadow: 0 6px 25px rgba(89, 1, 30, 0.45);
+    transform: translateY(-2px);
+}
+.btn-maps-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    stroke: #fff;
+}
+.btn-maps-arrow {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    stroke: rgba(255,255,255,0.7);
+    transition: transform 0.3s ease, stroke 0.3s ease;
+}
+.btn-maps:hover .btn-maps-arrow {
+    transform: translate(3px, -3px);
+    stroke: #fff;
+}
+
+/* ============================================
+   Scroll Animations
+============================================ */
+.scroll-animate {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+/* Fade + slide up */
+.scroll-animate.fade-up {
+    transform: translateY(50px);
+}
+.scroll-animate.fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade + slide down */
+.scroll-animate.fade-down {
+    transform: translateY(-50px);
+}
+.scroll-animate.fade-down.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade + slide left */
+.scroll-animate.fade-left {
+    transform: translateX(-60px);
+}
+.scroll-animate.fade-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade + slide right */
+.scroll-animate.fade-right {
+    transform: translateX(60px);
+}
+.scroll-animate.fade-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale in */
+.scroll-animate.scale-in {
+    transform: scale(0.85);
+}
+.scroll-animate.scale-in.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Slide up with slight bounce */
+.scroll-animate.slide-up {
+    transform: translateY(80px);
+}
+.scroll-animate.slide-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Stagger animation delays for children */
+.scroll-animate.stagger-children.is-visible > *:nth-child(1) { transition-delay: 0s; }
+.scroll-animate.stagger-children.is-visible > *:nth-child(2) { transition-delay: 0.1s; }
+.scroll-animate.stagger-children.is-visible > *:nth-child(3) { transition-delay: 0.2s; }
+.scroll-animate.stagger-children.is-visible > *:nth-child(4) { transition-delay: 0.3s; }
+.scroll-animate.stagger-children.is-visible > *:nth-child(5) { transition-delay: 0.4s; }
+.scroll-animate.stagger-children.is-visible > *:nth-child(6) { transition-delay: 0.5s; }
+
+.scroll-animate.stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-animate.stagger-children.is-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Longer and slower animations */
+.scroll-animate.slow {
+    transition-duration: 1.2s;
+}
+
+/* Custom delay utilities */
+.scroll-delay-1 { transition-delay: 0.15s !important; }
+.scroll-delay-2 { transition-delay: 0.3s !important; }
+.scroll-delay-3 { transition-delay: 0.45s !important; }
+
 /* Programme / Timeline */
 .programme-section {
     background-color: var(--accent-color);

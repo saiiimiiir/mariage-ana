@@ -35,4 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateCountdown, 1000);
   // Appel initial pour éviter le délai d'une seconde blancc
   updateCountdown();
+
+  // ============================================
+  // Scroll Animations (Intersection Observer)
+  // ============================================
+  const scrollElements = document.querySelectorAll('.scroll-animate');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  scrollElements.forEach((el) => observer.observe(el));
 });
