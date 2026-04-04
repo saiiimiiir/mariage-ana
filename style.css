@@ -22,7 +22,26 @@ body, html {
 }
 
 h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
-.script-font { font-family: 'The Youngest Script', cursive; font-size: 6rem; margin: 0; }
+.script-font {
+    font-family: 'The Youngest Script', cursive;
+    font-size: 6rem;
+    margin: 0;
+    animation: hero-glow 3s ease-in-out infinite;
+}
+
+@keyframes hero-glow {
+    0%, 100% {
+        text-shadow:
+            0 0 8px rgba(89, 1, 30, 0.3),
+            0 0 20px rgba(89, 1, 30, 0.15);
+    }
+    50% {
+        text-shadow:
+            0 0 15px rgba(89, 1, 30, 0.6),
+            0 0 40px rgba(89, 1, 30, 0.3),
+            0 0 60px rgba(89, 1, 30, 0.15);
+    }
+}
 a { text-decoration: none; color: inherit; font-weight: bold; font-size: 1rem;}
 
 /* Navigation */
